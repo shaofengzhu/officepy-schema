@@ -1,0 +1,101 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "dateTime": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "action": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/action-businessBar"
+          },
+          {
+            "$ref": "#/$defs/action-none"
+          }
+        ]
+      }
+    },
+    "required": [
+      "dateTime",
+      "action"
+    ],
+    "$defs": {
+      "action-none": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "none"
+            ]
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "action-businessBar": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "showBusinessBar"
+            ]
+          },
+          "businessBarId": {
+            "type": "string"
+          },
+          "frequency": {
+            "type": "string",
+            "enum": [
+                "OncePerMonth",
+                "PerSession",
+                "Always"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "buttonText": {
+            "type": "string"
+          },
+          "buttonAction": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                    "showSdxDialog"
+                ]
+              },
+              "sdxId": {
+                "type": "string"
+              },
+              "parameters": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "sdxId",
+              "parameters"
+            ]
+          }
+        },
+        "required": [
+          "type",
+          "businessBarId",
+          "frequency",
+          "title",
+          "description",
+          "buttonText"
+        ]
+      }
+    }
+  }
