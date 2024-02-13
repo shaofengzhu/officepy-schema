@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "datetime": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "clientNotification": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "buttonText": {
+            "type": "string"
+          },
+          "buttonClickHandlerSdxId": {
+            "type": "string"
+          },
+          "buttonClickHandlerSdxParameters": {
+            "type": "string"
+          },
+          "level": {
+            "type": "integer",
+            "enum": [
+              1,
+              2,
+              3
+            ]
+          },
+          "frequency": {
+            "type": "integer",
+            "enum": [
+              1,
+              2,
+              3
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "description",
+          "level",
+          "frequency"
+        ]
+      }
+    },
+    "required": ["datetime"]
+  }
