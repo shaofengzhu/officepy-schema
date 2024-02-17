@@ -9,24 +9,6 @@
       "clientNotification": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "buttonText": {
-            "type": "string"
-          },
-          "buttonClickHandlerSdxId": {
-            "type": "string"
-          },
-          "buttonClickHandlerSdxParameters": {
-            "type": "string"
-          },
           "level": {
             "type": "integer",
             "enum": [
@@ -35,21 +17,47 @@
               3
             ]
           },
-          "frequency": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "eventType": {
+            "type": "string"
+          },
+          "snoozePeriod": {
             "type": "integer",
             "enum": [
               1,
               2,
               3
             ]
+          },
+
+          "helpText": {
+            "type": "string"
+          },
+          "helpUrl": {
+            "type": "string"
+          },
+
+          "actionText": {
+            "type": "string"
+          },
+          "actionHandlerSdxId": {
+            "type": "string"
+          },
+          "actionHandlerSdxParameters": {
+            "type": "string"
           }
         },
         "required": [
-          "id",
+          "level",
           "title",
           "description",
-          "level",
-          "frequency"
+          "eventType",
+          "snoozePeriod"
         ]
       }
     },
