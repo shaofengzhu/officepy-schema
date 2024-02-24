@@ -2,10 +2,6 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "properties": {
-      "datetime": {
-        "type": "string",
-        "format": "date-time"
-      },
       "clientNotification": {
         "type": "object",
         "properties": {
@@ -26,13 +22,8 @@
           "eventType": {
             "type": "string"
           },
-          "snoozePeriod": {
-            "type": "integer",
-            "enum": [
-              1,
-              2,
-              3
-            ]
+          "snoozeHours": {
+            "type": "integer"
           },
 
           "helpText": {
@@ -57,9 +48,8 @@
           "title",
           "description",
           "eventType",
-          "snoozePeriod"
+          "snoozeHours"
         ]
       }
-    },
-    "required": ["datetime"]
+    }
   }
